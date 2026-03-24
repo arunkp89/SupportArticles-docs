@@ -14,19 +14,19 @@ ms.author: esflores
 
 ## Performance issues and bottlenecks
 
-When performance issues occur in different operating systems and applications, each case requires a unique approach to troubleshoot. CPU, memory, networking, and input/output (I/O) are key areas where issues can occur. Each of these areas displays different symptoms (sometimes simultaneously) and requires different diagnoses and solutions.
+Performance issues in different operating systems and applications each require a unique troubleshooting approach. CPU, memory, networking, and input/output (I/O) are the key areas where issues occur. Each area presents different symptoms (sometimes simultaneously) and requires different diagnoses and solutions.
 
-Performance issues could be caused by a misconfiguration of the application or setup. An example would be a web application that has a caching layer that isn't correctly configured. This situation triggers more requests flowing back to the origin server instead of being served from a cache.
+Performance issues may stem from application misconfiguration. For example, a web application with an improperly configured caching layer causes excess requests to flow back to the origin server instead of being served from cache.
 
-In another example, the redo log of a MySQL or MariaDB database is located on the operating system (OS) disk or on a disk that doesn't meet the database requirements. In this scenario, you might see fewer transactions per second (TPS) because of competition for resources and higher response times (latency).
+Another example: placing a MySQL or MariaDB redo log on the OS disk or a disk that doesn't meet the database's IOPS/latency requirements results in fewer transactions per second (TPS) due to resource contention and higher latency.
 
-If you fully understand the issue, you can better identify where to look on the stack (CPU, memory, networking, I/O). To troubleshoot performance issues, you have to establish a *baseline* that enables you to compare metrics after you make changes and to evaluate whether the overall performance has improved.
+Understanding the root cause helps you identify where to look in the stack (CPU, memory, networking, I/O). Establish a *baseline* first so you can compare metrics after changes and evaluate whether performance has improved.
 
-Troubleshooting a virtual machine (VM) performance issue is no different than resolving a performance issue on a physical system. It's about determining which resource or component is causing a *bottleneck* in the system.
+Troubleshooting OS performance in a Vitual Machine follows similar principles as physical systems — identify which resource or component is the *bottleneck*. Bottlenecks always exist; performance tuning is about moving them to a less-impactful resource.
 
 It's important to understand that bottlenecks always exist. Performance troubleshooting is all about understanding where a bottleneck occurs and how to move it to a less-offending resource.
 
-This guide helps you discover and resolve performance issues in Azure Virtual Machines in the Linux environment.
+This guide covers discovering and resolving performance issues in Azure Linux VMs.
 
 ### Obtain performance pointers
 
